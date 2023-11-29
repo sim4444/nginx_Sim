@@ -204,6 +204,10 @@ nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
 
+Step 15: If you see a success meassage like the one shown in Step 14, go ahead and restart the nginx service and you will see HTML created by you rather than original page of Debian nginx.
+``` bash
+    sudo systemctl restart nginx.service
+```
 
 
 
