@@ -63,7 +63,7 @@ As you are currently connected to server as regular user 'sim', now edit ssh con
   cd /etc/ssh
 ```
 
-- Step 2: Create a backup of original or old sshd_config file:
+- Step 2: Create a backup of original or old sshd_config file in case you break anything or mess up some things inside this file:
 ``` bash
   sudo cp sshd_config sshd_config.old
 ```
