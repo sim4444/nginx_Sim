@@ -212,7 +212,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
    ip a
 ```
 
-- Step 17: Now run the ip adddress you got in Step 16 in the browser and you will be able to see your html content like "Hello, World!". 
+- Step 17: Now run the ip adddress you got in Step 16 in the browser and you will be able to see your html content like "Hello, World!".  
 
 
 
