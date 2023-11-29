@@ -124,7 +124,7 @@ At this point before configuring nginx to serve a sample website, it is importan
 
 - Step 8: Inside index.html file, add the below html script:
 ``` html
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -145,8 +145,6 @@ At this point before configuring nginx to serve a sample website, it is importan
 </head>
 <body>
     <h1>Hello, World</h1>
-    <h2>Hello from Sim</h2>
-    <h3>Have a fantabulous day ahead!</h3>
 </body>
 </html>
 ```
@@ -214,7 +212,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
    ip a
 ```
 
-- Step 17: Now run the ip adddress in the browser and you will be able to see your html content like "Hello, World!"
+- Step 17: Now run the ip adddress you got in Step 16 in the browser and you will be able to see your html content like "Hello, World!". 
 
 
 
