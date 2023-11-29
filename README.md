@@ -197,19 +197,24 @@ At this point, you will encounter an error as we missed an important step on pur
     sudo rm default@
 ```
 
-Step 14: Do Step 12 again to check for any errors and test your nginx configurations.
+- Step 14: Do Step 12 again to check for any errors and test your nginx configurations.
 	This time, if there is no error then you see a success message like below:
 ```
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
 
-Step 15: If you see a success meassage like the one shown in Step 14, go ahead and restart the nginx service and you will see HTML created by you rather than original page of Debian nginx.
+- Step 15: If you see a success message like the one shown in Step 14, go ahead and restart the nginx service and you will see HTML created by you rather than original page of Debian nginx.
 ``` bash
     sudo systemctl restart nginx.service
 ```
 
+- Step 16: Get the ip address of the server using command:
+```
+   ip a
+```
 
+- Step 17: Now run the ip adddress in the browser and you will be able to see your html content like "Hello, World!"
 
 
 
