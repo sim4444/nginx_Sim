@@ -154,7 +154,7 @@ At this point before configuring nginx to serve a sample website, it is importan
   sudo vim my_site.config
 ```
 
-- Step 10: Now paste the below script inside the newly created file my_site.config in directory /etc/nginx/sites-available/. Make sure the directory is correct and in this case, we are referrring to directory /var/www/my_site because it contains the file index.html which we created in step 8. 
+- Step 10: Now paste the below script inside the newly created file my_site.config in directory /etc/nginx/sites-available/. Make sure the directory is correct and in this case, we are referrring to directory /var/www/my_site because it contains the file index.html which we created in step 8. We will do this so that the our index.html file is accessible so that it shows the content we want to see in web browser. 
 ```
 server {
 	listen 80 default_server;
