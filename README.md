@@ -56,25 +56,29 @@ Before we dive in, it is crucial to note that regular user needs "sudo" so that 
 
 ## Steps to prevent the root user from connecting to the server via SSH
 
-- Step 1: As you are currently connected to server as regular user 'sim', now edit ssh configuration so that the root user can no longer connect to the server via ssh. The ssh configuration files are in etc/ssh directory. The primary configuration file we need is the sshd_config in directory etc/ssh. Run below commands:
+As you are currently connected to server as regular user 'sim', now edit ssh configuration so that the root user can no longer connect to the server via ssh. The ssh configuration files are in etc/ssh directory. The primary configuration file we need is the sshd_config in directory etc/ssh. Run below commands:
 
-Go to /etc/ssh:
+- Step 1: Go to /etc/ssh:
 ``` bash
   cd /etc/ssh
 ```
-Create a backup of original or old sshd_config file:
+
+- Step 2: Create a backup of original or old sshd_config file:
 ``` bash
   sudo cp sshd_config sshd_config.old
 ```
-Open sshd_config file to edit:
+
+- Step 3: Open sshd_config file to edit:
 ``` bash
   sudo vim sshd_config
 ```
-Now, you have to look for the line PermitRootLogin yes and change yes to no. To find this line in vim a little faster, press forward slash (/) and type first words of what we are looking for. In this case type /PermitRootL and save the file (:wq). Now restart the ssh service:
+
+- Step 4: Now, you have to look for the line PermitRootLogin yes and change yes to no. To find this line in vim a little faster, press forward slash (/) and type first words of what we are looking for. In this case type /PermitRootL and save the file (:wq). Now restart the ssh service:
 ``` bash
   sudo systemctl restart ssh.service
 ```
-Now, you have prevented the root user from connecting to the server via SSH. Test it by exiting and trying to connect to your server as root and you should get a permission denied error.
+
+- Step 5: Now, you have prevented the root user from connecting to the server via SSH. Test it by exiting and trying to connect to your server as root and you should get a permission denied error.
 
 ## 
 
