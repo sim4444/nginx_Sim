@@ -1,4 +1,4 @@
-# Assignment 3
+# Assignment 3 - Part 1
 
 To begin with, we assume that we are currently connected to Debian server as a root user. We will go through all the important steps required to:
 - Create a new regular user
@@ -13,7 +13,7 @@ Lets start with the most important thing that why do we need to create a regular
 
 So, Creating a regular user is like having a security guard for your computer. This user has limited powers and needs permission (sudo) to perform important tasks to reduce the risk of accidents or harm. It's a good practice for security and accountability. Disabling direct access for the superuser (root) adds an extra layer of security to ensure only trusted individuals have access to critical parts of your system like having keys to important areas.
 
-## Steps to create a regular user, assign bash as login shell, make the user eligible to perform administrative tasks, and make the user eligible to access server via SSH:
+## Steps to create a regular user, assign bash as login shell, make the user eligible to perform administrative tasks, and make the user eligible to access server via SSH
 
 Before we dive in, it is crucial to note that regular user needs "sudo" so that regular user can access administrative privilege but the root user does not need "sudo" because root user already have elevated privileges. As currently we are assuming that we are logged in as root user so we dont need to use sudo in below commands:
 
