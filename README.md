@@ -82,9 +82,38 @@ As you are currently connected to server as regular user 'sim', now edit ssh con
 
 ## Steps to install nginx and configure nginx to serve a sample website
 
-Nginx is a widely-used web server and reverse proxy known for its speed and adaptability. It is amazing at hosting static and dynamic content to distribute incoming requests among servers and enhance security. Installing Nginx is important to host websites and ensure secure web operations. 
+Nginx is a widely-used web server and reverse proxy known for its speed and adaptability. It is amazing at hosting static and dynamic content to distribute incoming requests among servers and enhance security. Installing Nginx is important to host websites and ensure secure web operations. To install nginx, run below commands:
 
+- Step 1: Firstly, connect to Debian server as regular user Sim via SSH and update the package list:
+``` bash
+  sudo apt update
+```
 
+- Step 2: Install nginx using install command:
+``` bash
+  sudo apt install nginx
+```
+
+- Step 3: Start nginx service:
+``` bash
+  sudo systemctl start nginx
+```
+
+- Step 4: Check status of nginx service and enable it if it is disabled:
+``` bash
+  systemctl status nginx
+```
+
+- Step 5: Enable the nginx service so that it can start on booting is done:
+``` bash
+  sudo systemctl enable nginx
+```
+
+At this point before configuring nginx to serve a sample website, it is important to note that:
+- nginx configuration files are located in directory /etc/nginx/ and important configuration file is nginx.conf
+- the server block configurations are in directory /sites-available which is inside directory /etc/nginx/
+
+- Step 6: 
 
 
 
