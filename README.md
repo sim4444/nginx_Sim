@@ -109,11 +109,83 @@ Nginx is a widely-used web server and reverse proxy known for its speed and adap
   sudo systemctl enable nginx
 ```
 
-At this point before configuring nginx to serve a sample website, it is important to note that:
-- nginx configuration files are located in directory /etc/nginx/ and important configuration file is nginx.conf
-- the server block configurations are in directory /sites-available which is inside directory /etc/nginx/
+At this point before configuring nginx to serve a sample website, it is important to note that nginx configuration files are located in directory /etc/nginx/ and important configuration file is nginx.conf. The server block configurations are in directory /sites-available which is inside directory /etc/nginx/. For today's assignment in terms of configuration, we will not make any modification to file nginx.conf.
 
-- Step 6: 
+- Step 6: There are many directories that have the documents which are served by nginx and the common one is /var/www. We will go inside directory /var/www and create a new directory named my_site in /var/www 
+``` bash
+  cd /var/www
+  sudo mkdir my_site
+```
+
+- Step 7: Create a html file named index.html in directory /var/www/my_site
+``` bash
+  sudo vim index.html
+```
+
+- Step 8: Inside index.html file, add the below html script:
+``` html
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2420</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, World</h1>
+    <h2>Hello from Sim</h2>
+    <h3>Have a fantabulous day ahead!</h3>
+</body>
+</html>
+```
+
+- Step 9: Create a file named my_site.config inside directory /etc/nginx/sites-available/. Run below command:
+``` bash
+  sudo vim my_site.config
+```
+
+- Step 10: Now paste the below script inside the newly created file my_site.config in directory /etc/nginx/sites-available/. Make sure the directory is correct and in this case, we are referrring to directory /var/www/my_site because it contains the file index.html which we created in step 8. 
+```
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	
+	root /var/www/my_site;
+	
+	index index.html index.htm index.nginx-debian.html;
+	
+	server_name _;
+	
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ =404;
+	}
+}
+```
+
+- Step 11: Create a symbolic link to your new config file named my_site.config in directory /etc/nginx/sites-enabled:
+  
+  Creating a symbolic link to your new configuration in /etc/nginx/sites-enabled helps to organize and manage different site configurations. It allows you to selectively activate or deactivate specific sites without modifying the original files which makes it easier to control which configurations are in use at any given time. Run below command:
+``` bash
+  sudo ln -s /etc/nginx/sites-available/my_site.config /etc/nginx/sites-enabled/
+```
+
+- Step 12: 
+
+
 
 
 
