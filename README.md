@@ -80,6 +80,16 @@ As you are currently connected to server as regular user 'sim', now edit ssh con
 
 - Step 5: Now, you have prevented the root user from connecting to the server via SSH. Test it by exiting and trying to connect to your server as root and you should get a permission denied error.
 
-## 
+## Steps to install nginx and configure nginx to serve a sample website
+
+Nginx is a widely-used web server and reverse proxy known for its speed and adaptability. It is amazing at hosting static and dynamic content to distribute incoming requests among servers and enhance security. Installing Nginx is important to host websites and ensure secure web operations. 
+
+
+
+
+
+
+
+
 
 
