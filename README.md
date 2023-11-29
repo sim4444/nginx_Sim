@@ -183,8 +183,26 @@ server {
   sudo ln -s /etc/nginx/sites-available/my_site.config /etc/nginx/sites-enabled/
 ```
 
-- Step 12: 
+- Step 12: Run the below command to test your nginx configurations.
+  
+  Running sudo nginx -t is a good practice to catch configuration errors and ensure a smooth application of changes to your Nginx server.
+``` bash
+    sudo nginx -t
+```
 
+At this point, you will encounter an error as we missed an important step on purpose so that you remember this important step whenever you try to do it by yourself next time.
+
+- Step 13: Check the default symbolic link inside directory /etc/nginx/sites-enabled (it will be visible as default@). The symbolic link often points to the default configuration file which might conflict with our new configuration file (my_site.config). So, we will remove the default symbolic link  (default@) so that our custom configuration (my_site.config) takes priority over the default one to make our site settings effective. Run below command:
+``` bash
+    sudo rm default@
+```
+
+Step 14: Do Step 12 again to check for any errors and test your nginx configurations.
+	This time, if there is no error then you see a success message like below:
+```
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+```
 
 
 
